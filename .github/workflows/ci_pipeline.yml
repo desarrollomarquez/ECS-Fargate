@@ -32,5 +32,5 @@ jobs:
         id: build-image
         run: |
             aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.AWS_ECR_URL }}
-            docker build . --file Dockerfile --tag ${{ secrets.AWS_ECR_URL_STAGING_BACKEND }}:${GITHUB_SHA}
-            docker push ${{ secrets.AWS_ECR_URL_STAGING_BACKEND }}:${GITHUB_SHA}
+            docker build . --file Dockerfile --tag ${{ secrets.AWS_ECR_URL_STAGING_BACKEND }}:latest
+            docker push ${{ secrets.AWS_ECR_URL_STAGING_BACKEND }}:latest
