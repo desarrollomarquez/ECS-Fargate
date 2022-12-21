@@ -6,5 +6,5 @@ RUN pip3 install --no-cache-dir -r /requirements.txt
 COPY . /app
 WORKDIR /app/
 ENV PYTHONPATH=/app
-EXPOSE 5000
-ENTRYPOINT ["gunicorn","run:app","-b","0.0.0.0:5000"]
+EXPOSE 3001
+ENTRYPOINT ["gunicorn","run:app","-b","0.0.0.0:3001"]
